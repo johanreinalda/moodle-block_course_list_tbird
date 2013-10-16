@@ -43,4 +43,6 @@ $string['enddate'] = 'Ends: ';
 $string['onelinedates'] = 'One line dates';
 $string['configonelinedates'] = 'Show one line course start and end dates separated by -';
 $string['dates'] = 'Dates: ';
+$string['course_list_tbird:addinstance'] = 'Add a new Course List Tbird block';
+$string['course_list_tbird:myaddinstance'] = 'Add a new Course List Tbird block to My home';
 
