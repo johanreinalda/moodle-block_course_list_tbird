@@ -27,7 +27,7 @@ class block_course_list_tbird extends block_list {
     }
     
     function get_content() {
-        global $CFG, $USER, $DB, $OUTPUT;
+        global $CFG, $USER, $DB, $OUTPUT, $COURSE;
 
         if($this->content !== NULL) {
             return $this->content;
