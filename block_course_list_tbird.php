@@ -23,8 +23,10 @@ class block_course_list_tbird extends block_list {
     //only show in courses and My Moodle page
     function applicable_formats() {
     	return array(
-    			'course-view' => true,
-    			'my' => true);
+                'course-view' => true,
+                'my' => true,
+                'site-index' => true	//front page
+    	    	);
     }
     
     function get_content() {
