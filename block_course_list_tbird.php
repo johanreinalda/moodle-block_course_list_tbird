@@ -45,8 +45,6 @@ class block_course_list_tbird extends block_base {
         //$this->content->icons = array();
         $this->content->footer = '';
 
-        $this->page->requires->js('/blocks/course_list_tbird/module.js');
-        
         $icon  = '<img src="' . $OUTPUT->pix_url('i/course') . '" class="icon" alt="" />';
 
         $adminseesall = true;
@@ -57,8 +55,11 @@ class block_course_list_tbird extends block_base {
         }
 
         $showcategories = $CFG->block_course_list_tbird_showcategory;
+        if($showcategories) // we need the YUI TreeView code for this
+            $this->page->requires->js('/blocks/course_list_tbird/module.js');
+
         $categories = coursecat::get(0)->get_children();  // Parent = 0   ie top-level categories only
-        
+
         if (empty($CFG->disablemycourses) and isloggedin() and !isguestuser() and
           !(has_capability('moodle/course:update', context_system::instance()) and $adminseesall)) {    // Just print My Courses
 			// sort order may depend on startdate of course.
