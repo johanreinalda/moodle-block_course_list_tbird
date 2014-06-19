@@ -18,7 +18,7 @@
  * Version details
  *
  * @package    block
- * @subpackage course_list
+ * @subpackage course_list_tbird
  * @copyright  1999 onwards Martin Dougiamas (http://dougiamas.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,8 +26,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 //based on block "course_list" version 2012061700;
-$plugin->version = 2014040900;
+$plugin->version = 2014061800;
 $plugin->requires  = 2013111800;        // Requires this Moodle version, 2.6
 $plugin->component = 'block_course_list_tbird'; // Full name of the plugin (used for diagnostics)
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release   = '1.0 for Moodle 2.6+';
+$plugin->release   = '1.1 for Moodle 2.6+';

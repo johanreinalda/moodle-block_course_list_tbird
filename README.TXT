@@ -11,7 +11,7 @@ Database tables are NOT automatically created, since this is highly customized.
 Database creation should eventually go in the IMS Enterprise enrolment module, since that is where data is created.
 
 NOTE:
-This block is tested in Moodle v2.3 only!
+This block is tested in Moodle v2.3 - 2.6 only!
 
 INSTALLATION:
 Unzip these files to the appropriate directories under your Moodle install
