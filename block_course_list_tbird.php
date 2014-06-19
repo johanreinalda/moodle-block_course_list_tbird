@@ -55,7 +55,7 @@ class block_course_list_tbird extends block_base {
         }
 
         $showcategories = $CFG->block_course_list_tbird_showcategory;
-        if($showcategories) // we need the YUI TreeView code for this
+        if($showcategories) // we need the YUI TreeView code for this.
             $this->page->requires->js('/blocks/course_list_tbird/module.js');
 
         $categories = coursecat::get(0)->get_children();  // Parent = 0   ie top-level categories only
@@ -98,9 +98,6 @@ class block_course_list_tbird extends block_base {
                             $dateinfo = get_string('datesheader','block_course_list_tbird') . date(empty($CFG->block_course_list_tbird_startdateformat) ? 'M j, Y' : $CFG->block_course_list_tbird_startdateformat, $course->startdate);
                             //get end date from our own internal table.
                             $conditions = array('courseid' => $course->id);
-                            //$fields = '*';
-                            //$strictness = IGNORE_MISSING;
-                            //if ($endrec = $DB->get_record(TBIRD_COURSE_AUTOHIDE_TABLE,$conditions,$fields,$strictness)) {
                             if ($endrec = $DB->get_record(TBIRD_COURSE_AUTOHIDE_TABLE,$conditions)) {
                                 $dateinfo .= ' - ' . date(empty($CFG->block_course_list_tbird_enddateformat) ? 'M j, Y' : $CFG->block_course_list_tbird_enddateformat, $endrec->enddate);
                             }
@@ -112,9 +109,6 @@ class block_course_list_tbird extends block_base {
    				    if ($meeting = $DB->get_record_select(TBIRD_COURSE_INFO_TABLE,$select)) {
    				        $meetinginfo = get_string('meetinginfoheader','block_course_list_tbird') . $meeting->value;
 				    }                    
-                    //$coursedata = '';
-                    //if ($showcategories)
-                    //    $coursedata = '<li>';
                     $coursedata = html_writer::start_tag('li');
                     if(!$showcategories)
                         $coursedata .= $icon;
