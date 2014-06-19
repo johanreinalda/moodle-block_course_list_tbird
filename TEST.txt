@@ -1,0 +1,23 @@
+<ul>
+    <li class="category"><em>Current Term</em>
+        <ul class="category">
+            <li><a  title="Johan-Test-eCampusbook-RESTORED" href="http://moodle2.dev.thunderbird.edu/course/view.php?id=88"><img src="http://moodle2.dev.thunderbird.edu/theme/image.php/thunder/core/1398958213/i/course" class="icon" alt="" />&nbsp;Johan-Test eCampus book (course id 17313) RESTORED</a><br />Dates: Oct 24, 2012</li>
+            <li><a  title="GM 4450 J3 (2012DF)" href="http://moodle2.dev.thunderbird.edu/course/view.php?id=73"><img src="http://moodle2.dev.thunderbird.edu/theme/image.php/thunder/core/1398958213/i/course" class="icon" alt="" />&nbsp;Global Business Leadership (GM 4450 J3 (2012DF))</a><br />Dates: May 15, 2013</li>
+        </ul>
+    </li>
+    <li class="category"><em>Miscellaneous</em>
+        <ul class="category">
+            <li><a  title="All Mods Course" href="http://moodle2.dev.thunderbird.edu/course/view.php?id=265"><img src="http://moodle2.dev.thunderbird.edu/theme/image.php/thunder/core/1398958213/i/course" class="icon" alt="" />&nbsp;All Modules Course</a><br />Dates: Jan 22, 2014</li>
+        </ul>
+    </li>
+    <li class="category"><em>Future Terms</em>
+        <ul class="category">
+            <li><a  title="GF 5271 A3 (2014SP)" href="http://moodle2.dev.thunderbird.edu/course/view.php?id=263"><img src="http://moodle2.dev.thunderbird.edu/theme/image.php/thunder/core/1398958213/i/course" class="icon" alt="" />&nbsp;Global Securities Investment (GF 5271 A3 (2014SP))</a><br />LECT 54 T 06:00PM 09:15PM<br />Dates: Jan 27, 2014</li>
+        </ul>
+    </li>
+    <li class="category"><em>Past Terms</em>
+        <ul class="category">
+            <li><a  class="dimmed"  title="GM 8505 A3 (2013EF)" href="http://moodle2.dev.thunderbird.edu/course/view.php?id=85"><img src="http://moodle2.dev.thunderbird.edu/theme/image.php/thunder/core/1398958213/i/course" class="icon" alt="" />&nbsp;Global Marketing Management (GM 8505 A3 (2013EF))</a><br />Dates: Sep 7, 2013</li>
+        </ul>
+    </li>
+</ul>
