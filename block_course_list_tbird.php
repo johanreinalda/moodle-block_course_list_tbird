@@ -41,8 +41,6 @@ class block_course_list_tbird extends block_base {
 
         $this->content = new stdClass;
         $this->content->text = '';
-        //$this->content->items = array();
-        //$this->content->icons = array();
         $this->content->footer = '';
 
         $icon  = '<img src="' . $OUTPUT->pix_url('i/course') . '" class="icon" alt="" />';
@@ -74,7 +72,6 @@ class block_course_list_tbird extends block_base {
                     $this->content->text = '<div id="categoryContainer">';  // for YUI2 TreeView.
                 $this->content->text .= '<ul>';
                 foreach ($courses as $course) {
-                	global $DB;
                 	$coursecontext = context_course::instance($course->id);
                     $linkcss = $course->visible ? "" : " class=\"dimmed\" ";
                     // should we show start/end dates for this course?
