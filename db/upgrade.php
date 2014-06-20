@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -15,19 +16,28 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details
+ * course_list_tbird block upgrade functions
  *
- * @package    block
- * @subpackage course_list_tbird
- * @copyright  1999 onwards Martin Dougiamas (http://dougiamas.com)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   block_course_list_tbird
+ * @copyright 2014 onwards Johan Reinalda (http://www.thunderbird.edu)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+/**
+ *
+ * @param int $oldversion
+ * @param object $block
+ */
+function xmldb_block_course_list_tbird_upgrade($oldversion) {
+    global $DB;
 
-//based on block "course_list" version 2012061700;
-$plugin->version = 2014062000;
-$plugin->requires  = 2013111800;        // Requires this Moodle version, 2.6
-$plugin->component = 'block_course_list_tbird'; // Full name of the plugin (used for diagnostics)
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release   = '1.1 for Moodle 2.6+';
+    // Moodle v2.3.0 release upgrade line
+    // Put any upgrade step following this
+
+
+    // Moodle v2.4.0 release upgrade line
+    // Put any upgrade step following this
+
+
+    return true;
+}
