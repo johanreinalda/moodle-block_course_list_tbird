@@ -26,6 +26,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 //based on block "course_list" version 2012061700;
-$plugin->version = 2013070200;
+$plugin->version = 2014061800;
 $plugin->requires  = 2012112900;        // Requires this Moodle version
 $plugin->component = 'block_course_list_tbird'; // Full name of the plugin (used for diagnostics)

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="block/course_list_tbird/db" VERSION="20140618" COMMENT="XMLDB file for Moodle block/course_list_tbird"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="tbird_course_info" COMMENT="Holds additional course information not part of normal Moodle tables">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="courseid"/>
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="The course info field name" ENUM="false" PREVIOUS="course" NEXT="value"/>
+        <FIELD NAME="value" TYPE="char" LENGTH="1024" NOTNULL="true" SEQUENCE="false" COMMENT="The value of the course info" PREVIOUS="name"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="courseinfo" UNIQUE="false" FIELDS="courseid, name"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
