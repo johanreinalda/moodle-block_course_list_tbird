@@ -3,16 +3,17 @@ This is a customized Course List HTML Block
 Written by Johan Reinalda,  johan at reinalda dot net
 
 DESCRIPTION:
-This block functions like the regular Moodle course_list block.
-It is customized to render information about the course meeting days and times,
-and course start and end dates. (start is already parsed by normal moodle IMS module)
+This block functions like the regular Moodle course_list block, but can render courses
+in a tree view, instead of long list of courses.
 
-This added course information is read from custom tables,
-which are loaded via IMS enterprise XML data
-processed by the customized "imsenterprisetbird" enrolment module.
-Database tables are NOT automatically created, since this is highly customized.
-Database creation should eventually go in the IMS Enterprise enrolment module,
-since that is where data is created.
+Additionally, it is customized to render information about the course meeting days and times,
+and course start and end dates. (start is already part of normal moodle course data)
+
+This added course information is read from a custom table,
+which are processed by the customized "imsenterprise" enrolment module.
+
+If you do not store any data in that table, this module behaves just fine as is.
+
 
 NOTE:
 This block is tested in Moodle v2.3 - 2.7 only!
@@ -23,7 +24,7 @@ Then as Moodle admin, go to the Notifications entry of your Admin block.
 The block should be found and added to the list of available block.
 
 We use the extension capability of the IMS-XML format and import the following elements
-in the custom IMS module "imsenterprisetbird"
+in the custom Thunderbird IMS module "imsenterprise". 
 
 <group>
     <timeframe>
@@ -36,11 +37,15 @@ in the custom IMS module "imsenterprisetbird"
 </group>
 
 The meeting info is stored in a new table, created by this block, and used by the IMS code,
-as well as the custom "course_meeting_info" block. 
+as well as the custom "course_meeting_info" block.
+See the custom IMS enrolment module for more at
+https://github.com/johanreinalda/moodle-enrol_imsenterprise,
+and the Moodle modules site.
 
 
 VERSION CHANGES:
 
 2014061800 - Updated for Moodle 2.6 & 2.7 with course list collapsible at the category level
+             and sorted according to the global category sort order.
 2012100300 - Updated for Moodle 2.3
 2010052500 - Initial version
