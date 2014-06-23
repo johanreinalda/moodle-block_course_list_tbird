@@ -142,21 +142,28 @@ class block_course_list_tbird extends block_base {
 					       $parents = preg_split('|/|', $path, 0, PREG_SPLIT_NO_EMPTY);
 					       array_pop($parents);
 					       if (isset($parents[0]))
-					           $level = $parents[0];
+					           $catid = $parents[0];
 					       else {
 					           // this course is in a top-level category!
-					           $level = $course->category;
+					           $catid = $course->category;
 					       }
 					    } else {
 					        // show in course parent category.
-					        $level = $course->category;
+					        $catid = $course->category;
 					    }
 					    // add to category course data.
-					    if (isset($catdata[$level]))
-					       $catdata[$level] .= $coursedata;
-					    else
+					    // sort by $category->sortorder
+					    $catsortorder = $allcategories[$catid]->sortorder;
+					    if (isset($catdata[$catsortorder])) {
+					       // add course data in this category
+					       $catdata[$catsortorder]->coursedata .= $coursedata;
+					    } else {
 					        // first entry.
-					       $catdata[$level] = $coursedata;
+					        $d = new stdClass();
+					        $d->catid = $catid;
+					        $d->coursedata = $coursedata;
+					       $catdata[$catsortorder] = $d;
+					    }
 					} else {
 					    // just list courses.
 					    $this->content->text .= $coursedata;
@@ -168,11 +175,12 @@ class block_course_list_tbird extends block_base {
                     $this->content->footer = "<a href=\"$CFG->wwwroot/course/index.php\">".get_string("fulllistofcourses")."</a> ...";
                 }
                 if ($showcategories) {
-                    $firstcat = true;
-                    foreach($catdata as $catid => $catinfo) {
+                    // sort by the global category sort order.
+                    ksort($catdata);
+                    foreach($catdata as $catorder => $catinfo) {
                         $this->content->text .= html_writer::start_tag('li');
-                        $this->content->text .= html_writer::start_tag('em') . $allcategories[$catid]->name . html_writer::end_tag('em');
-                        $this->content->text .= html_writer::start_tag('ul') . $catinfo . html_writer::end_tag('ul');
+                        $this->content->text .= html_writer::start_tag('em') . $allcategories[$catinfo->catid]->name . html_writer::end_tag('em');
+                        $this->content->text .= html_writer::start_tag('ul') . $catinfo->coursedata . html_writer::end_tag('ul');
                         $this->content->text .= html_writer::end_tag('li');
                     }
                 }
